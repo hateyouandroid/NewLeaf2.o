@@ -1,5 +1,6 @@
 package com.example.newleaf2o
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.newleaf2o.databinding.ActivityMainBinding
@@ -11,7 +12,13 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+        onClick()
+    }
 
-
+    private fun onClick() {
+        binding.btTest.setOnClickListener {
+            val intent=Intent(this,LoginActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
