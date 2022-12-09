@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
   <androidx.appcompat.widget.LinearLayoutCompat
@@ -27,6 +28,7 @@
           android:layout_width="wrap_content"
           android:inputType="numberPassword"
           android:hint="*"
+          android:background="@drawable/otp_bg"
           android:gravity="center"
           android:layout_weight="1"
           android:layout_height="wrap_content"/>
@@ -34,6 +36,7 @@
           android:layout_width="wrap_content"
           android:inputType="numberPassword"
           android:hint="*"
+          android:background="@drawable/otp_bg"
           android:gravity="center"
           android:layout_weight="1"
           android:layout_height="wrap_content"/>
@@ -41,9 +44,17 @@
           android:layout_width="wrap_content"
           android:inputType="numberPassword"
           android:hint="*"
+          android:background="@drawable/otp_bg"
           android:maxWidth="@dimen/dimen20"
           android:gravity="center"
           android:layout_weight="1"
           android:layout_height="wrap_content"/>
   </androidx.appcompat.widget.LinearLayoutCompat>
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="wrap_content"
+        android:text="Testing"
+        android:layout_marginTop="@dimen/dimen10"
+        android:layout_gravity="center"
+        android:id="@+id/test"
+        android:layout_height="wrap_content"/>
 </androidx.appcompat.widget.LinearLayoutCompat>

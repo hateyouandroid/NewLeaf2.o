@@ -4,7 +4,7 @@
 
 
     <!-- Background Color -->
-    <solid android:color="#00BCD4" />
+    <solid android:color="#ffffff" />
     <padding
         android:bottom="@dimen/dimen10"
         android:left="@dimen/dimen2"
@@ -13,8 +13,8 @@
 
     <!-- Border Color -->
     <stroke
-        android:width="3dp"
-        android:color="#ffffff" />
+        android:width="@dimen/dimen2"
+        android:color="#FFEB3B" />
 
     <!-- Round Corners -->
     <corners android:radius="@dimen/dimen2" />
