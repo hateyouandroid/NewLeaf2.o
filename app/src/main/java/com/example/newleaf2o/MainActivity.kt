@@ -16,7 +16,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
           onClick()
 
-
     }
 
     private fun onClick() {
