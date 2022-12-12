@@ -12,6 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NewLeaf2o"
         tools:targetApi="31">
+
         <activity
             android:name=".SignUpActivity"
             android:exported="false">
