@@ -54,6 +54,7 @@ class SQLiteHelper(private val context: Context?):SQLiteOpenHelper(context,DATAB
     {
         private const val DATABASE_NAME="emp_db"
         private const val DATABASE_VERSION=3
+
         private const val TABLE_NAME="customer_registration"
         private const val USERNAME="username"
         private const val MAIL_ID="mailid"
