@@ -19,20 +19,17 @@ class SignUpActivity : AppCompatActivity() {
     private fun onClick() {
         binding.btSave.setOnClickListener {
             if(isValidate())
-                Toast.makeText(this,"Valid",Toast.LENGTH_SHORT).show()
-            else
-                Toast.makeText(this,"Not Valid",Toast.LENGTH_SHORT).show()
+            printTost("Valid")
         }
     }
 
     private fun isValidate(): Boolean{
         try {
-            binding.etUsername.nameValidate(binding.etUsername)
-            binding.etMail.emailValidate(binding.etMail)
-            binding.etContact.mobileValidate(binding.etContact)
-            binding.etPassword.passwordValidate(binding.etPassword)
-            binding.etConformpass.confPasswordValidate(binding.etPassword,binding.etConformpass)
-
+            binding.etUsername.nameValidate()
+            binding.etMail.emailValidate()
+            binding.etContact.mobileValidate()
+            binding.etPassword.passwordValidate()
+            binding.etConformpass.confPasswordValidate(binding.etPassword)
         }
         catch (e:ValidateName){
             binding.etUsername.requestFocus()

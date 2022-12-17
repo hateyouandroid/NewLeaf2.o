@@ -3,51 +3,51 @@ package com.example.newleaf2o.util
 import androidx.appcompat.widget.AppCompatEditText
 import com.example.newleaf2o.Exceptions.*
 
-fun AppCompatEditText.nameValidate(name:AppCompatEditText):Boolean{
+fun AppCompatEditText.nameValidate():Boolean{
     when{
-        name.text.toString().trim().isBlank()||name.text.toString().trim().isEmpty()->
+        this.text.toString().trim().isBlank()||this.text.toString().trim().isEmpty()->
             throw ValidateName("Please Enter Your Name")
-        isNotAlfa(name.text.toString().trim())->
+        isNotAlfa(this.text.toString().trim())->
             throw ValidateName("Name Shuld Conten Only Alfabets")
-        name.text.toString().trim().length>30->
+        this.text.toString().trim().length>30->
             throw ValidateName("Name Shuld Be Less Than 30")
         else -> return true
     }
 }
-fun AppCompatEditText.mobileValidate(mob:AppCompatEditText):Boolean{
+fun AppCompatEditText.mobileValidate():Boolean{
     when{
-        mob.text.toString().trim().isBlank()||mob.text.toString().trim().isEmpty()->
+        this.text.toString().trim().isBlank()||this.text.toString().trim().isEmpty()->
             throw ValidateMobile("Please Enter Your Mobile No")
-        mob.text.toString().trim().length<10->
+        this.text.toString().trim().length<10->
             throw ValidateMobile("Mobile No Shuld Be Grater Than or Equal To 10")
         else -> return true
     }
 }
-fun AppCompatEditText.emailValidate(email:AppCompatEditText):Boolean{
+fun AppCompatEditText.emailValidate():Boolean{
     when{
-        email.text.toString().trim().isBlank()||email.text.toString().trim().isEmpty()->
+        this.text.toString().trim().isBlank()||this.text.toString().trim().isEmpty()->
             throw ValidateEmail("Please Enter Your Email Address")
-        isvalidEmail(email.text.toString().trim())->
+        isvalidEmail(this.text.toString().trim())->
             throw ValidateEmail("Please Enter Valid Email Address")
         else -> return true
     }
 }
 
-fun AppCompatEditText.passwordValidate(pass:AppCompatEditText):Boolean{
+fun AppCompatEditText.passwordValidate():Boolean{
     when{
-        pass.text.toString().trim().isBlank()||pass.text.toString().trim().isEmpty()->
+        this.text.toString().trim().isBlank()||this.text.toString().trim().isEmpty()->
             throw ValidatePassword("Please Enter Password")
-        pass.text.toString().trim().length<5->
-            throw ValidateName("Password Shuld Grater Than 5")
-        pass.text.toString().trim().length>15->
-            throw ValidateName("Password Shuld Be Less Than 15")
+        this.text.toString().trim().length<5->
+            throw ValidatePassword("Password Shuld Grater Than 5")
+        this.text.toString().trim().length>15->
+            throw ValidatePassword("Password Shuld Be Less Than 15")
         else -> return true
     }
 }
-fun AppCompatEditText.confPasswordValidate(pass: AppCompatEditText,pass2:AppCompatEditText):Boolean
+fun AppCompatEditText.confPasswordValidate(pass: AppCompatEditText):Boolean
 {
     when{
-        pass.text.toString().trim()!=pass2.text.toString().trim()->
+        this.text.toString().trim()!=pass.text.toString().trim()->
             throw ValidateConformPassword("Password Shuld be same")
         else-> return true
     }
