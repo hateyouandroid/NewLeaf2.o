@@ -53,6 +53,7 @@ class SignUpActivity : AppCompatActivity() {
             binding.etPassword.requestFocus()
             binding.etPassword.error=e.message
             return false
+
         }
         catch (e:ValidateConformPassword){
             binding.etConformpass.requestFocus()
