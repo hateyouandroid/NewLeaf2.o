@@ -16,7 +16,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         onClick()
-
     }
 
     private fun onClick() {
@@ -27,7 +26,6 @@ class MainActivity : AppCompatActivity() {
                R.id.cart->Toast.makeText(this,"Cart",Toast.LENGTH_SHORT).show()
                R.id.profile->Toast.makeText(this,"Profile",Toast.LENGTH_SHORT).show()
                R.id.menu->startActivity(sinup)
-
            }
         }
     }

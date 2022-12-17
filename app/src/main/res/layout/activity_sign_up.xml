@@ -119,41 +119,47 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/dimen20"
         android:layout_marginEnd="@dimen/dimen20"
-        android:weightSum="2">
+        android:weightSum="2"
+        >
 
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
+        <com.example.newleaf2o.PinEntryEditText
+            android:id="@+id/et_otp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dimen10"
-            android:layout_marginBottom="@dimen/dimen5"
+            android:layout_marginLeft="2dp"
+            android:cursorVisible="true"
+            android:layout_marginTop="2dp"
             android:layout_weight="1"
-            android:drawablePadding="@dimen/dimen5"
-            android:paddingStart="@dimen/dimen5"
-            android:paddingEnd="@dimen/dimen5"
-            app:boxBackgroundMode="outline"
-            app:hintEnabled="true">
+            android:digits="1234567890"
+            android:focusable="true"
+            android:layout_marginBottom="2dp"
+            android:inputType="number"
+            android:text="33"
+            android:maxLength="4"
+            android:textColor="@color/black"
+            android:textIsSelectable="false"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            android:layout_toStartOf="@+id/otp" />
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/otp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawablePadding="@dimen/dimen10"
-                android:gravity="center"
-                android:hint="OTP"
-                android:importantForAutofill="no"
-                android:inputType="text"
-                android:padding="@dimen/dimen10" />
-        </com.google.android.material.textfield.TextInputLayout>
 
-        <androidx.appcompat.widget.AppCompatButton
+       
+
+        <!--<androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/otp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dimen7"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="0dp"
             android:layout_marginEnd="@dimen/dimen10"
-            android:layout_weight="1"
             android:padding="@dimen/dimen5"
-            android:text="Submit OTP" />
+            android:layout_weight="1"
+            android:text="Submit OTP" >
+
+        </androidx.appcompat.widget.AppCompatButton>
+-->
     </androidx.appcompat.widget.LinearLayoutCompat>
 
     <androidx.appcompat.widget.LinearLayoutCompat
