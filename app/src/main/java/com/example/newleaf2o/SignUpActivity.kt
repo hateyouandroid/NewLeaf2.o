@@ -30,7 +30,7 @@ class SignUpActivity : AppCompatActivity() {
 
     private fun onClick() {
         binding.btSave.setOnClickListener {
-            vm.userRegister(getRegisterUserRequest())
+           if(isValidate())vm.userRegister(getRegisterUserRequest())
         }
     }
 
