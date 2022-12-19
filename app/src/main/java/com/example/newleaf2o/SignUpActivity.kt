@@ -47,22 +47,43 @@ class SignUpActivity : AppCompatActivity() {
         )
     }
 
-
-    private fun isVaildate(): Boolean {
-
+    private fun isValidate(): Boolean{
         try {
-            binding.etUsername.nameVaild(binding.etUsername, "Please Enter the name")
-            binding.etMail.mailVaild(binding.etMail, "Please Enter the MailId")
-        } catch (e: VaildateName) {
-            binding.etUsername.setText("")
+            binding.etUsername.nameValidate()
+            binding.etMail.emailValidate()
+            binding.etContact.mobileValidate()
+            binding.etPassword.passwordValidate()
+            binding.etConformpass.confPasswordValidate(binding.etPassword)
+        }
+        catch (e:ValidateName){
             binding.etUsername.requestFocus()
-            binding.etUsername.setError(e.message)
-        } catch (e: VaildateMail) {
-            binding.etMail.setText("")
+            binding.etUsername.error=e.message
+            return false
+        }
+        catch (e:ValidateEmail){
             binding.etMail.requestFocus()
-            binding.etMail.setError(e.message)
+            binding.etMail.error=e.message
+            return false
+        }
+        catch (e:ValidateMobile){
+            binding.etContact.requestFocus()
+            binding.etContact.error=e.message
+            return false
+        }
+        catch (e:ValidatePassword){
+            binding.etPassword.requestFocus()
+            binding.etPassword.error=e.message
+            return false
+
+        }
+        catch (e:ValidateConformPassword){
+            binding.etConformpass.requestFocus()
+            binding.etConformpass.error=e.message
+            return false
         }
         return true
     }
+
+
 
 }
