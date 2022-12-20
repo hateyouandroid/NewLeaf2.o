@@ -32,30 +32,19 @@ class SignUpActivity : AppCompatActivity() {
             binding.etConformpass.confPasswordValidate(binding.etPassword)
         }
         catch (e:ValidateName){
-            binding.etUsername.requestFocus()
-            binding.etUsername.error=e.message
-            return false
+            return binding.etUsername.validationError(e.message.toString())
         }
         catch (e:ValidateEmail){
-            binding.etMail.requestFocus()
-            binding.etMail.error=e.message
-            return false
+            return binding.etMail.validationError(e.message.toString())
         }
         catch (e:ValidateMobile){
-            binding.etContact.requestFocus()
-            binding.etContact.error=e.message
-            return false
+            return binding.etContact.validationError(e.message.toString())
         }
         catch (e:ValidatePassword){
-            binding.etPassword.requestFocus()
-            binding.etPassword.error=e.message
-            return false
-
+            return binding.etPassword.validationError(e.message.toString())
         }
         catch (e:ValidateConformPassword){
-            binding.etConformpass.requestFocus()
-            binding.etConformpass.error=e.message
-            return false
+           return binding.etConformpass.validationError(e.message.toString())
         }
         return true
     }

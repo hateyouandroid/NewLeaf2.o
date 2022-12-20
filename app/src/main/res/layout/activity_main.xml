@@ -7,6 +7,16 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+  <!--  <com.marvel999.acr.ArcProgress
+        android:id="@+id/arc_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:ap_background_progressbar_width="20"
+        app:ap_foreground_progressbar_width="20"
+        app:ap_progress="10"
+        app:ap_progress_background_color="@color/white"
+        app:ap_progress_color="@color/purple_200"
+        tools:ignore="MissingConstraints" />-->
 
 
     <androidx.fragment.app.FragmentContainerView
