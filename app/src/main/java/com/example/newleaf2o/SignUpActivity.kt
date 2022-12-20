@@ -5,17 +5,18 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.example.newleaf2o.Data.Request.register_request
+import com.example.newleaf2o.Model.HomeVM
 import com.example.newleaf2o.databinding.ActivitySignUpBinding
 
 class SignUpActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySignUpBinding
 
     //private lateinit var db:SQLiteHelper
-    private lateinit var vm: mainVM
+    private lateinit var vm: HomeVM
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivitySignUpBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
-        vm = ViewModelProvider(this)[mainVM::class.java]
+        vm = ViewModelProvider(this)[HomeVM::class.java]
         setContentView(binding.root)
         onClick()
         observer()
