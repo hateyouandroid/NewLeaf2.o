@@ -7,6 +7,7 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+
   <!--  <com.marvel999.acr.ArcProgress
         android:id="@+id/arc_img"
         android:layout_width="wrap_content"
@@ -19,11 +20,25 @@
         tools:ignore="MissingConstraints" />-->
 
 
-    <androidx.fragment.app.FragmentContainerView
+    <!--<androidx.fragment.app.FragmentContainerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/purple_200"
-        app:layout_constraintBottom_toBottomOf="@+id/bottom_app_bar"/>
+        app:layout_constraintBottom_toBottomOf="@+id/bottom_app_bar"/>-->
+  <androidx.appcompat.widget.LinearLayoutCompat
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:gravity="center"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      tools:ignore="MissingConstraints">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/Userame"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="notLoginYet" />
+  </androidx.appcompat.widget.LinearLayoutCompat>
 
 
     <com.ismaeldivita.chipnavigation.ChipNavigationBar

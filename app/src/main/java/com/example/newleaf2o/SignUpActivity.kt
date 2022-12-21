@@ -35,6 +35,7 @@ class SignUpActivity : AppCompatActivity() {
         vm.registerResult.observe(this){
             printTost(it.ResponseMsg)
         }
+
     }
 
 

@@ -19,6 +19,4 @@ var apiServise:ApiServise=APIClient.getRetrofit().create(ApiServise::class.java)
     val isProgress: LiveData<Boolean>
         get() = _isProgress
 
-
-
 }

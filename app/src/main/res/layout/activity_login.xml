@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:minHeight="@dimen/dimen5"
     android:orientation="vertical"
-    android:background="@color/bg"
+    android:background="@color/white"
     tools:context=".LoginActivity">
 
     <androidx.appcompat.widget.AppCompatImageView
@@ -112,7 +112,7 @@
         android:layout_marginEnd="@dimen/dimen15"
         android:gravity="end"
         android:textColor="@color/purple_700"
-        android:text="@string/forget_password"
+        android:text="Forget password"
         android:textSize="14sp" />
 
     <androidx.appcompat.widget.AppCompatButton
@@ -120,7 +120,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:background="@color/btn"
+        android:background="@color/purple_200"
         android:elevation="@dimen/dimen2"
         android:text="Login" />
 
@@ -145,7 +145,6 @@
             android:layout_height="wrap_content"
             android:text="Sign Up"
             android:layout_marginStart="@dimen/dimen2"
-            android:textColor="@color/Yello"
             android:textSize="14sp"
             android:textStyle="bold" />
     </LinearLayout>
