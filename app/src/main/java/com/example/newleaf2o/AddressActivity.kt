@@ -1,70 +1,59 @@
 package com.example.newleaf2o
 
-import addressData.MyData
-import apiClient.ApiClient
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.lifecycle.ViewModelProvider
+import com.example.newleaf2o.data.request.AddAddressRequest
+import com.example.newleaf2o.data.response.AddAddressResponse
 import com.example.newleaf2o.databinding.ActivityAddressBinding
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
+import com.example.newleaf2o.retrofit.APIClient
+import com.example.newleaf2o.retrofit.ApiServices
+import com.example.newleaf2o.vm.AddressVM
+import retrofit2.*
 
 class AddressActivity : AppCompatActivity() {
-    private lateinit var binding:ActivityAddressBinding
-    private lateinit var db:ADDSQLiteHelper
-    private lateinit var apiServices:ApiServices
+    private lateinit var binding: ActivityAddressBinding
+    private lateinit var apiServices: ApiServices
+    private lateinit var vm:AddressVM
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding= ActivityAddressBinding.inflate(layoutInflater)
+        binding = ActivityAddressBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        initView()
+        vm=ViewModelProvider(this)[AddressVM::class.java]
+        onClick()
+        obeserver()
     }
-    private fun initView() {
-        db= ADDSQLiteHelper (this)
-          apiServices= ApiClient.getRetrofit().create(ApiServices::class.java)
-          binding.btSave.setOnClickListener {
-              val name=binding.etUsername.text.toString()
-              val home=binding.etHomeNo.text.toString()
-              val society=binding.etSociety.text.toString()
-              val area=binding.etArea.text.toString()
-              val landmark=binding.etLandmark.text.toString()
-              val pin_code=binding.etPincode.text.toString()
-              Data(name,home,society,area,landmark,pin_code)
-             if(db.insertData(name, home,society, area, landmark, pin_code)){
-                 Toast.makeText(this, "Record Stored", Toast.LENGTH_LONG).show()
-             }
-              else{
-                 Toast.makeText(this, "Record does not Stored", Toast.LENGTH_LONG).show()
 
-             }
-          }
-      }
-      private fun Data(name: String,home: String,society:String,area:String,landmark:String,pin_code:String){
-        val call=apiServices.addlist(name, home, society, area, landmark, pin_code)
-        call.enqueue(object :Callback<MyData>
-          {
-              override fun onResponse(call: Call<MyData>, response: Response<MyData>) {
-                  val loginData = response.body()
-                  val status  = loginData?.status
-                  if (status == "1")
-                  {
-                      Toast.makeText(this@AddressActivity, loginData?.message, Toast.LENGTH_SHORT).show()
-                  }
-                  else
-                  {
-                      Toast.makeText(this@AddressActivity, loginData?.message,Toast.LENGTH_SHORT).show()
-                  }
-              }
-              override fun onFailure(call: Call<MyData>, t: Throwable) {
-                  Toast.makeText(this@AddressActivity,"${t.message}",Toast.LENGTH_SHORT).show()
-              }
-          })
-      }
-}
+    private fun obeserver() {
+    vm.addAddressResponse.observe(this){
+        Toast.makeText(this,it.ResponseMsg,Toast.LENGTH_LONG).show()
+    }
+    }
 
-private fun Unit.enqueue(callback: Callback<MyData>) {
+    private fun onClick() {
+        binding.btSave.setOnClickListener {
+            vm.addAddress(getAddAddressResquest())
+        }
+    }
 
-}
+    private fun getAddAddressResquest(): AddAddressRequest {
+        return AddAddressRequest(
+            "0",
+            binding.etArea.text.toString().trim(),
+            binding.etHomeNo.text.toString().trim(),
+            "123345575675678",
+            binding.etLandmark.text.toString().trim(),
+            "5678432345",
+            binding.etUsername.text.toString().trim(),
+            "126634",
+            binding.etPincode.text.toString().trim(),
+            binding.etSociety.text.toString().trim(),
+            "home",
+            "35"
+        )
+    }
+           }
+
 
 

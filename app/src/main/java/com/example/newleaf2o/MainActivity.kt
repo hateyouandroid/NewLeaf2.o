@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
 
     fun onClick() {
         binding.test.setOnClickListener {
-            val intent = Intent(this, ForgotActivity::class.java)
+            val intent = Intent(this, SignUpActivity::class.java)
 
             startActivity(intent)
 
