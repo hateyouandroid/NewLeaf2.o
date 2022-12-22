@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ForgetActivity">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/dimen50"
+            android:src="@drawable/ic_forgot_password" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen10"
+            android:gravity="center"
+            android:text="Enter Your Phone Number"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen5"
+            android:gravity="center"
+            android:text="We will send you 4 digit verification code"
+            android:textSize="16sp" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+<!--
+        <soup.neumorphism.NeumorphCardView
+            style="@style/Widget.Neumorph.CardView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen30"
+            android:padding="@dimen/dimen17"
+            app:neumorph_shapeAppearance="@style/NeumophoCard"
+            app:neumorph_shapeType="basin">
+
+
+            <EditText
+                android:id="@+id/countrycode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:autofillHints=""
+                android:background="@android:color/transparent"
+                android:gravity="start"
+                android:padding="@dimen/dimen10"
+                android:textColor="@color/view_bg"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <ImageView
+                android:id="@+id/sp_top_amt2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center||end"
+                android:contentDescription="@string/cd_todo"
+                android:padding="@dimen/dimen2"
+                android:src="@drawable/ic_down_arrow" />
+            <Spinner
+                android:id="@+id/sp_top_amt1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_centerVertical="true"
+                android:layout_gravity="end||center"
+                android:background="@android:color/transparent"
+                android:gravity="center"
+                android:spinnerMode="dropdown" />
+
+        </soup.neumorphism.NeumorphCardView>
+-->
+
+
+        <soup.neumorphism.NeumorphCardView
+            style="@style/Widget.Neumorph.CardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen10"
+            android:layout_marginTop="@dimen/dimen30"
+            android:layout_marginEnd="@dimen/dimen20"
+            android:padding="@dimen/dimen17"
+            app:neumorph_shapeAppearance="@style/NeumophoCard"
+            app:neumorph_shapeType="basin">
+
+            <EditText
+                android:id="@+id/mobile_no"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:autofillHints=""
+                android:background="@android:color/transparent"
+                android:gravity="start"
+                android:hint="Mobile No*"
+                android:padding="@dimen/dimen10"
+                android:textColor="@color/view_bg"
+                tools:ignore="TouchTargetSizeCheck" />
+        </soup.neumorphism.NeumorphCardView>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <soup.neumorphism.NeumorphButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:id="@+id/forget_otp"
+        android:padding="@dimen/dimen25"
+        android:clickable="true"
+        android:text="Generate OTP*"
+        android:textColor="@color/white"
+        app:neumorph_backgroundColor="@color/button_bg_color"
+        app:neumorph_shapeAppearance="@style/NeumophoCard"
+        app:neumorph_shapeType="flat" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

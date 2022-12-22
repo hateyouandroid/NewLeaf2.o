@@ -14,7 +14,7 @@
 
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="match_parent"
-             android:layout_height="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:gravity="center"
             android:text="Create an account to use all the features"
@@ -23,8 +23,8 @@
         <androidx.appcompat.widget.AppCompatImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_access_account"
-            android:padding="40dp" />
+            android:padding="40dp"
+            android:src="@drawable/ic_access_account" />
     </androidx.appcompat.widget.LinearLayoutCompat>
 
     <androidx.appcompat.widget.LinearLayoutCompat
@@ -146,23 +146,32 @@
                 android:padding="@dimen/dimen10" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <androidx.appcompat.widget.AppCompatButton
+        <soup.neumorphism.NeumorphButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dimen7"
-            android:layout_marginEnd="@dimen/dimen10"
+            android:gravity="center"
             android:layout_weight="1"
-            android:padding="@dimen/dimen5"
-            android:text="Submit OTP" />
+            android:layout_gravity="center"
+            android:id="@+id/genrate_otp"
+            android:padding="@dimen/dimen25"
+            android:clickable="true"
+            android:text="Submit OTP"
+            android:textColor="@color/white"
+            app:neumorph_backgroundColor="@color/view_bg"
+            app:neumorph_shapeAppearance="@style/NeumophoCard"
+            app:neumorph_shapeType="flat" />
+
+
+
     </androidx.appcompat.widget.LinearLayoutCompat>
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="@dimen/dimen10"
         android:layout_marginStart="@dimen/dimen20"
-        android:layout_marginEnd="@dimen/dimen20">
+        android:layout_marginTop="@dimen/dimen10"
+        android:layout_marginEnd="@dimen/dimen20"
+        android:orientation="vertical">
 
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -218,13 +227,22 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:layout_width="wrap_content"
-            android:text="Save"
+
+        <soup.neumorphism.NeumorphButton
             android:id="@+id/bt_save"
-            android:layout_marginTop="@dimen/dimen10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_height="wrap_content"/>
+            android:clickable="true"
+            android:gravity="center"
+            android:padding="@dimen/dimen25"
+            android:text="Save"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            app:neumorph_backgroundColor="@color/button_bg_color"
+            app:neumorph_shapeAppearance="@style/NeumophoCard"
+            app:neumorph_shapeType="flat" />
+
     </androidx.appcompat.widget.LinearLayoutCompat>
 
 </androidx.appcompat.widget.LinearLayoutCompat>

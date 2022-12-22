@@ -115,14 +115,20 @@
         android:text="@string/forget_password"
         android:textSize="14sp" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/bt_login"
+
+    <soup.neumorphism.NeumorphButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:layout_gravity="center"
-        android:background="@color/btn"
-        android:elevation="@dimen/dimen2"
-        android:text="Login" />
+        android:id="@+id/bt_login"
+        android:padding="@dimen/dimen30"
+        android:text="Login"
+        android:textColor="@color/white"
+        app:neumorph_backgroundColor="@color/button_bg_color"
+        app:neumorph_shapeAppearance="@style/NeumophoCard"
+        app:neumorph_shapeType="flat" />
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -145,7 +151,7 @@
             android:layout_height="wrap_content"
             android:text="Sign Up"
             android:layout_marginStart="@dimen/dimen2"
-            android:textColor="@color/Yello"
+            android:textColor="@color/Red"
             android:textSize="14sp"
             android:textStyle="bold" />
     </LinearLayout>
