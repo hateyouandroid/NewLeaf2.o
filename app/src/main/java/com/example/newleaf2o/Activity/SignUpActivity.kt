@@ -1,40 +1,33 @@
-package com.example.newleaf2o
+package com.example.newleaf2o.Activity
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
+import com.example.newleaf2o.*
 import com.example.newleaf2o.Data.Request.register_request
 import com.example.newleaf2o.Model.HomeVM
 import com.example.newleaf2o.databinding.ActivitySignUpBinding
 
-class SignUpActivity : AppCompatActivity() {
-    private lateinit var binding: ActivitySignUpBinding
-
+class SignUpActivity : BaseActivity<ActivitySignUpBinding>(ActivitySignUpBinding::inflate) {
     //private lateinit var db:SQLiteHelper
     private lateinit var vm: HomeVM
-    override fun onCreate(savedInstanceState: Bundle?) {
-        binding = ActivitySignUpBinding.inflate(layoutInflater)
-        super.onCreate(savedInstanceState)
+
+    override fun initVM() {
+        super.initVM()
         vm = ViewModelProvider(this)[HomeVM::class.java]
-        setContentView(binding.root)
-        onClick()
-        observer()
     }
 
-    private fun observer() {
+    override fun setObserver() {
         vm.registerUser.observe(this)
         {
             Toast.makeText(this, it.ResponseMsg.toString(), Toast.LENGTH_LONG).show()
         }
     }
 
-    private fun onClick() {
+    override fun onClick() {
         binding.btSave.setOnClickListener {
-           if(isValidate())vm.userRegister(getRegisterUserRequest())
+            if (isValidate()) vm.userRegister(getRegisterUserRequest())
         }
     }
-
 
     private fun getRegisterUserRequest(): register_request {
 
@@ -48,43 +41,36 @@ class SignUpActivity : AppCompatActivity() {
         )
     }
 
-    private fun isValidate(): Boolean{
+    private fun isValidate(): Boolean {
         try {
             binding.etUsername.nameValidate()
             binding.etMail.emailValidate()
             binding.etContact.mobileValidate()
             binding.etPassword.passwordValidate()
             binding.etConformpass.confPasswordValidate(binding.etPassword)
-        }
-        catch (e:ValidateName){
+        } catch (e: ValidateName) {
             binding.etUsername.requestFocus()
-            binding.etUsername.error=e.message
+            binding.etUsername.error = e.message
             return false
-        }
-        catch (e:ValidateEmail){
+        } catch (e: ValidateEmail) {
             binding.etMail.requestFocus()
-            binding.etMail.error=e.message
+            binding.etMail.error = e.message
             return false
-        }
-        catch (e:ValidateMobile){
+        } catch (e: ValidateMobile) {
             binding.etContact.requestFocus()
-            binding.etContact.error=e.message
+            binding.etContact.error = e.message
             return false
-        }
-        catch (e:ValidatePassword){
+        } catch (e: ValidatePassword) {
             binding.etPassword.requestFocus()
-            binding.etPassword.error=e.message
+            binding.etPassword.error = e.message
             return false
 
-        }
-        catch (e:ValidateConformPassword){
+        } catch (e: ValidateConformPassword) {
             binding.etConformpass.requestFocus()
-            binding.etConformpass.error=e.message
+            binding.etConformpass.error = e.message
             return false
         }
         return true
     }
-
-
 
 }

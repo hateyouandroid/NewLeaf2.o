@@ -7,8 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.VibrationEffect
 import android.os.Vibrator
-import android.text.TextWatcher
-import androidx.core.widget.addTextChangedListener
+import com.example.newleaf2o.Activity.LoginActivity
 import com.example.newleaf2o.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -26,7 +25,7 @@ class MainActivity : AppCompatActivity() {
         binding.login.setOnClickListener {
             val vibrator = getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
 
-            val intent = Intent(this,LoginActivity::class.java)
+            val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
             if (vibrator.hasVibrator()) { // Vibrator availability checking
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
