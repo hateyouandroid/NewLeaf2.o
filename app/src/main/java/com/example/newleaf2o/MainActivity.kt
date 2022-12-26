@@ -13,9 +13,9 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(R.layout.activity_login)
 
-
     }
 
-}
 
+
+}
 

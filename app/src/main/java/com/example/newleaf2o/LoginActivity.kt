@@ -1,6 +1,7 @@
 package com.example.newleaf2o
 
 
+import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -26,6 +27,7 @@ class LoginActivity : AppCompatActivity() {
 
         onClick()
         observers()
+        validation()
 
 
 //SharedPreference
@@ -54,6 +56,24 @@ class LoginActivity : AppCompatActivity() {
         }*/
         }
     }
+//validation
+    private fun validation() : Boolean{
+    val mailid = binding.etPass.text.toString()
+    val password=binding.etPass.text.toString()
+
+    if (mailid.trim().isEmpty()) {
+        binding.etEmail.error="Enter valid email id"
+            binding.etEmail.requestFocus()
+            return false
+        }
+    else if (password.trim().isEmpty())
+        {
+        binding.etPass.error="Enter Password"
+            binding.etPass.requestFocus()
+            return false
+        }
+        return true
+    }
 
     private fun observers() {
     vm.loginResponse.observe(this){
@@ -64,6 +84,8 @@ class LoginActivity : AppCompatActivity() {
     private fun onClick() {
     binding.btLogin.setOnClickListener{
         vm.login(loginRequest())
+        val intent=Intent(this,SignUpActivity::class.java)
+        startActivity(intent)
     }
     }
       private fun loginRequest(): LoginResquest{

@@ -10,10 +10,10 @@
 
 
     <androidx.appcompat.widget.AppCompatImageView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-        android:src="@drawable/login"
-    android:minHeight="300dp"/>
+        android:layout_width="230dp"
+        android:layout_height="300dp"
+        android:layout_gravity="center"
+      />
 
     <TextView
         android:id="@+id/tv_wel"
